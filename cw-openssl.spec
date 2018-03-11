@@ -1,25 +1,26 @@
-%if 0%{?nodist}
+%if 0%{?_no_dist}
         %undefine dist
 %endif
+
 %define debug_package	%{nil}
-%global _pkg_name	cw-openssl
-%global _pkg_version	1.0.2n
-%global _pkg_release	1%{?dist}.cachewall
-%global _prefix		/opt/cachewall/%{_pkg_name}
+%global name		cw-openssl
+%global version		1.0.2n
+%global release		1%{?dist}.cachewall
+%global _prefix		/opt/cachewall/%{name}
 %global _opensslconfdir	%{_prefix}/etc
 
 Summary:	Cryptography and SSL/TLS Toolkit
-Name:		%{_pkg_name}
-Version:	%{_pkg_version}
-Release:	%{_pkg_release}
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 License:	OpenSSL
 Group:		System Environment/Libraries
 URL:		https://www.openssl.org/
 Vendor:		OpenSSL
-Provides:	%{_pkg_name}
-BuildRoot:	%{_tmppath}/%{_pkg_name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Provides:	%{name}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Source0:	https://www.openssl.org/source/openssl-%{version}.tar.gz
-Source1:	%{_pkg_name}.conf
+Source1:	%{name}.conf
 Patch1:		openssl-1.0.2a-enginesdir.patch
 
 %description
@@ -86,7 +87,7 @@ make %{?_smp_mflags}
 %attr(0755,root,root) %{_prefix}/lib/libcrypto.so.1.0.0
 %attr(0755,root,root) %{_prefix}/lib/libssl.so.1.0.0
 %dir %{_sysconfdir}/ld.so.conf.d/
-%attr(0644,root,root) %{_sysconfdir}/ld.so.conf.d/cw-openssl.conf
+%attr(0644,root,root) %{_sysconfdir}/ld.so.conf.d/%{name}.conf
 
 %files devel
 %defattr(-,root,root)
