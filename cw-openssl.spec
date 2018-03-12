@@ -22,6 +22,9 @@ Group:		System Environment/Libraries
 URL:		https://www.openssl.org/
 Vendor:		OpenSSL
 Provides:	%{name}
+%if "%{name}" != "cw-openssl"
+Provides:	cw-openssl
+%endif
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Source0:	https://www.openssl.org/source/openssl-%{version}.tar.gz
 Source1:	%{name}.conf
