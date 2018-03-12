@@ -2,6 +2,10 @@
         %undefine dist
 %endif
 
+%if "%{dist}" == ".el7.centos"
+	%define dist	.el7
+%endif
+
 %define debug_package	%{nil}
 %global name		cw-openssl
 %global version		1.0.2n
