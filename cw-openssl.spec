@@ -9,7 +9,7 @@
 %define debug_package	%{nil}
 %global name		cw-openssl
 %global version		1.0.2n
-%global release		1_2%{?dist}.cachewall
+%global release		2%{?dist}.cachewall
 %global _prefix		/opt/cachewall/%{name}
 %global _opensslconfdir	%{_prefix}/etc
 
