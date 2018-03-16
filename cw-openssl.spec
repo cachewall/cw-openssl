@@ -6,7 +6,6 @@
 	%define dist	.el7
 %endif
 
-%define debug_package	%{nil}
 %global name		cw-openssl
 %global version		1.0.2n
 %global release		2%{?dist}.cachewall
