@@ -8,7 +8,7 @@
 
 %global name		cw-openssl
 %global version		1.0.2o
-%global release		1%{?dist}.cachewall
+%global release		1_1%{?dist}.cachewall
 %global _prefix		/opt/cachewall/%{name}
 %global _opensslconfdir	%{_prefix}/etc
 
