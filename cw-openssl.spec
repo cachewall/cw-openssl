@@ -8,7 +8,7 @@
 
 %global name		cw-openssl
 %global version		1.0.2o
-%global release		1_1%{?dist}.cachewall
+%global release		1_2%{?dist}.cachewall
 %global _prefix		/opt/cachewall/%{name}
 %global _opensslconfdir	%{_prefix}/etc
 
@@ -104,6 +104,9 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %changelog
+* Fri Apr 12 2018 Bryon Elston <bryon@cachewall.com> - 1.0.2o-1_2.cachewall
+- Release is now <upstream pkgrel>_<downstream pkgrel>
+
 * Sun Apr 08 2018 Bryon Elston <bryon@cachewall.com> - 1.0.2o-1.cachewall
 - Update cw-openssl from OpenSSL 1.0.2n to 1.0.2o for CVE-2018-0739
 
